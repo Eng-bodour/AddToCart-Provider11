@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provideraddtocart/Model/item.dart';
+import './Model/checkout.dart';
 
 import 'Model/cart.dart';
 //import 'package:provider/provider.dart';
@@ -41,7 +42,15 @@ class _HomeState extends State<Home> {
                     padding: const EdgeInsets.only(right: 50),
                     child: Row(
                       children: [
-                        const Icon(Icons.add_shopping_cart),
+                        IconButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const Cheched(),
+                                  ));
+                            },
+                            icon: const Icon(Icons.add_shopping_cart)),
                         const SizedBox(
                           width: 10.0,
                         ),

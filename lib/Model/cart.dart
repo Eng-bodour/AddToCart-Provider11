@@ -11,7 +11,15 @@ class Cart with ChangeNotifier {
     notifyListeners();
   }
 
+  void remove(Item item) {
+    _items.remove(item);
+    _price -= item.price;
+    notifyListeners();
+  }
+
   int get count => _items.length;
 
   double totalPrice() => _price;
+
+  List<Item> get product => _items;
 }
